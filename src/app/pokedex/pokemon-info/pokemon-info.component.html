@@ -1,0 +1,36 @@
+<div class="info-container">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="pokemon-nr"># {{ pokemon.number }}</div>
+        <div class="screen">
+          <ng-container *ngIf="pokemon">
+            <img [src]="pokemon.sprites.front_default" />
+          </ng-container>
+        </div>
+      </div>
+      <div *ngIf="pokemon" class="col info-details mt-5">
+        <div class="capitalize type">
+          <div [className]="type.type.name" *ngFor="let type of pokemon.types">
+            {{ type.type.name }}
+          </div>
+        </div>
+        <div class="mt-2">Height: {{ pokemon.height }} m</div>
+        <div>Weight: {{ pokemon.weight }} kg</div>
+        <div class="capitalize">
+          Abilities:
+          <span *ngFor="let ability of pokemon.abilities; let index = index"
+            >{{ ability.ability.name
+            }}<span *ngIf="index !== pokemon.abilities.length - 1"
+              >,
+            </span></span
+          >
+        </div>
+      </div>
+    </div>
+    <div class="name-tag capitalize">{{ pokemon.name }}</div>
+    <div class="info p-2">
+      <div>{{ pokemon.description.replace('\f', ' ') }}</div>
+    </div>
+  </div>
+</div>

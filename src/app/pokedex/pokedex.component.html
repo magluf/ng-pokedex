@@ -1,0 +1,9 @@
+<div class="pokedex-container mt-5">
+  <app-pokemon-search
+    [searchResults]="searchResults"
+    [loading]="loading"
+    (findPokemon)="handleFindPokemon($event)"
+    (pokemonSelected)="handlePokemonSelected($event)"
+  ></app-pokemon-search>
+  <app-pokemon-info [pokemon]="selectedPokemon"></app-pokemon-info>
+</div>

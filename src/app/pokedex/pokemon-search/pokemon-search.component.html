@@ -1,0 +1,60 @@
+<div class="pokemon-search">
+  <div class="input-group mb-3">
+    <input
+      [(ngModel)]="searchValue"
+      [disabled]="loading"
+      (keyup.enter)="triggerFindPokemon()"
+      type="text"
+      class="form-control"
+      placeholder="# or name"
+    />
+    <div class="input-group-append">
+      <button
+        (click)="triggerFindPokemon()"
+        class="btn btn-outline-secondary"
+        [ngClass]="{ disabled: loading || !searchValue }"
+        [disabled]="loading || !searchValue"
+        type="button"
+        id="button-addon2"
+      >
+        <ng-container *ngIf="loading; else elseTemplate">
+          <div>
+            <div class="spinner-grow spinner-grow-sm">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+        </ng-container>
+        <ng-template #elseTemplate>
+          <i class="fas fa-search"></i>
+        </ng-template>
+      </button>
+    </div>
+  </div>
+  <div class="search-screen-container">
+    <div class="search-screen-border"></div>
+    <div *ngIf="beganSearch && !areAllImagesLoaded()" class="loading-spinner">
+      <div class="loading-bar">
+        <div [style.width.px]="imagesLoadingProgress" class="loading-bar-progress"></div>
+      </div>
+
+    </div>
+    <div
+      *ngIf="beganSearch && !areAllImagesLoaded()"
+      class="loading-screen"
+    ></div>
+    <div class="search-screen">
+      <div class="pokelist">
+        <div
+          (click)="pokemonSelected.emit(pokemon)"
+          class="pokemon"
+          *ngFor="let pokemon of searchResults"
+        >
+          <img
+            [src]="pokemon.sprites.front_default"
+            (load)="incrementImagesLoaded()"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
