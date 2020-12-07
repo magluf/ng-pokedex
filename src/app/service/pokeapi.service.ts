@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-
 export interface Pokemon {
   number: number;
   name: string;
@@ -65,7 +64,6 @@ export class PokeApiService {
   }
 
   async getAllPokemon() {
-    console.log('tried?');
     if (!this._allPokemonList) {
       return await this.http
         .get(`${environment.apiUrl}/pokemon?limit=898&offset=0`)
