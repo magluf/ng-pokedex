@@ -65,6 +65,7 @@ export class PokeApiService {
   }
 
   async getAllPokemon() {
+    console.log('tried?');
     if (!this._allPokemonList) {
       return await this.http
         .get(`${environment.apiUrl}/pokemon?limit=898&offset=0`)
