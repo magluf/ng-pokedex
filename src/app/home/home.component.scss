@@ -1,0 +1,90 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+}
+
+.content {
+  text-align: center;
+  font-size: 0px;
+}
+
+.ng {
+  width: 350px;
+  font-size: 20px;
+  text-align: start;
+}
+
+.button {
+  border-radius: 4px;
+  background-color: black;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 40px;
+  width: 350px;
+  transition: all 0.5s;
+  cursor: pointer;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+}
+.button:hover span {
+  padding-right: 25px;
+}
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.button span:after {
+  content: '\00bb';
+  padding: 0px 0px 0px 25px;
+  margin-top: -0.4rem;
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -30px;
+  transition: 0.5s;
+}
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.button:active {
+  transform: translateY(2px);
+  transition: 0.08s;
+  /* background-color: #505050; */
+  box-shadow: 3px 3px 2.5px rgba(0, 0, 0, 0.4);
+}
+
+// .button {
+//   cursor: pointer;
+//   width: 600px;
+//   border: 2px solid black;
+//   border-radius: 5px;
+//   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+//   :hover {
+//     padding-right: 25px;
+//   }
+//   :hover span:after {
+//     opacity: 0;
+//     right: 0;
+//   }
+//   span {
+//     display: inline-block;
+//     position: relative;
+//     transition: 0.5s;
+//   }
+//   span:after {
+//     content: '\00bb';
+//     padding: 0px 0px 0px 25px;
+//     margin-top: 0.5rem;
+//     position: absolute;
+//     opacity: 1;
+//     top: 0;
+//     right: -30px;
+//     transition: 0.5s;
+//   }
+// }

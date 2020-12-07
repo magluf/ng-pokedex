@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <div class="pokemon-nr"># {{ pokemon.number }}</div>
+        <div class="pokemon-nr"><span *ngIf="pokemon">#</span> {{ pokemon ? pokemon.number : '' }}</div>
         <div class="screen">
           <ng-container *ngIf="pokemon">
             <img [src]="pokemon.sprites.front_default" />
@@ -28,9 +28,9 @@
         </div>
       </div>
     </div>
-    <div class="name-tag capitalize">{{ pokemon.name }}</div>
+    <div class="name-tag capitalize">{{ pokemon ? pokemon.name : '' }}</div>
     <div class="info p-2">
-      <div>{{ pokemon.description.replace('\f', ' ') }}</div>
+      <div>{{ pokemon ? pokemon.description.replace('\f', ' ')  : ''}}</div>
     </div>
   </div>
 </div>

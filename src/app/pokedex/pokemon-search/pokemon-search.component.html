@@ -1,12 +1,12 @@
 <div class="pokemon-search">
-  <div class="input-group mb-3">
+  <div class="input-group mb-3 search-input">
     <input
       [(ngModel)]="searchValue"
       [disabled]="loading"
       (keyup.enter)="triggerFindPokemon()"
       type="text"
       class="form-control"
-      placeholder="# or name"
+      placeholder="search by # or name"
     />
     <div class="input-group-append">
       <button
@@ -34,15 +34,18 @@
     <div class="search-screen-border"></div>
     <div *ngIf="beganSearch && !areAllImagesLoaded()" class="loading-spinner">
       <div class="loading-bar">
-        <div [style.width.px]="imagesLoadingProgress" class="loading-bar-progress"></div>
+        <div
+          [style.width.px]="imagesLoadingProgress"
+          class="loading-bar-progress"
+        ></div>
       </div>
-
     </div>
     <div
       *ngIf="beganSearch && !areAllImagesLoaded()"
       class="loading-screen"
     ></div>
     <div class="search-screen">
+      <!-- <div *ngIf="beganSearch && !searchResults.length && !errorMessageCleared" class="p-2">No Pokémon found!</div> -->
       <div class="pokelist">
         <div
           (click)="pokemonSelected.emit(pokemon)"
@@ -57,4 +60,5 @@
       </div>
     </div>
   </div>
+  <div (click)="triggerClearPokemon()" class="button mt-2">Clear</div>
 </div>

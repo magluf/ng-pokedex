@@ -3,6 +3,7 @@
     [searchResults]="searchResults"
     [loading]="loading"
     (findPokemon)="handleFindPokemon($event)"
+    (clearPokemon)="handleClearPokemon()"
     (pokemonSelected)="handlePokemonSelected($event)"
   ></app-pokemon-search>
   <app-pokemon-info [pokemon]="selectedPokemon"></app-pokemon-info>

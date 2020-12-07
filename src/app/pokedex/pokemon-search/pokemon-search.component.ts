@@ -11,6 +11,7 @@ import { PokeApiService, Pokemon } from 'src/app/service/pokeapi.service';
 export class PokemonSearchComponent {
   @Output() pokemonSelected: EventEmitter<Pokemon> = new EventEmitter();
   @Output() findPokemon: EventEmitter<string> = new EventEmitter();
+  @Output() clearPokemon: EventEmitter<any> = new EventEmitter();
 
   @Input() searchResults: Pokemon[];
   @Input() loading: boolean;
@@ -19,6 +20,7 @@ export class PokemonSearchComponent {
   imagesLoaded = 0;
   imagesLoadingProgress = 0;
   searchValue: string;
+  errorMessageCleared;
 
   incrementImagesLoaded() {
     this.imagesLoaded++;
@@ -29,7 +31,15 @@ export class PokemonSearchComponent {
   triggerFindPokemon() {
     this.imagesLoaded = 0;
     this.beganSearch = true;
+    this.errorMessageCleared = false;
     this.findPokemon.emit(this.searchValue);
+  }
+
+  triggerClearPokemon() {
+    this.imagesLoaded = 0;
+    this.searchValue = '';
+    this.errorMessageCleared = true;
+    this.clearPokemon.emit();
   }
 
   areAllImagesLoaded() {

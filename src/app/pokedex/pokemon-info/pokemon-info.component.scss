@@ -1,6 +1,7 @@
 .info-container {
   display: flex;
   flex-direction: column;
+  min-width: 470px;
 }
 .info-details {
   font-size: 12px;
@@ -41,6 +42,10 @@
   text-transform: capitalize;
 }
 
+.white-border {
+  border: white;
+}
+
 // Types
 .type {
   margin-top: 25px;
@@ -51,7 +56,7 @@
 $bug: #A8B820;
 $dragon: #6F37F9;
 $normal: #A9A878;
-$fight: #C02F27;
+$fighting: #C02F27;
 $ghost: #B8B8D0;
 $electric: #F9D130;
 $flying: #A990F1;
@@ -72,12 +77,15 @@ $fairy: #EE99EE;
 }
 .dragon {
   background-color: $dragon;
+  color: white;
 }
 .normal {
   background-color: $normal;
+  color: white;
 }
-.fight {
-  background-color: $fight;
+.fighting {
+  background-color: $fighting;
+  color: white;
 }
 .ghost {
   background-color: $ghost;
@@ -96,6 +104,7 @@ $fairy: #EE99EE;
 }
 .poison {
   background-color: $poison;
+  color: white;
 }
 .fire {
   background-color: $fire;
@@ -111,12 +120,15 @@ $fairy: #EE99EE;
 }
 .rock {
   background-color: $rock;
+  color: white;
 }
 .grass {
   background-color: $grass;
+  color: white;
 }
 .dark {
   background-color: $dark;
+  color: white;
 }
 .fairy {
   background-color: $fairy;

@@ -65,4 +65,9 @@ export class PokedexComponent implements OnInit {
     ).filter((el) => el.sprites.front_default);
     this.loading = false;
   }
+
+  handleClearPokemon() {
+    this.searchResults = [];
+    this.selectedPokemon = null;
+  }
 }

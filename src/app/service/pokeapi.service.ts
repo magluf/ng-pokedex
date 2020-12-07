@@ -18,7 +18,7 @@ export interface Pokemon {
 })
 export class PokeApiService {
   constructor(private http: HttpClient) {}
-  private _allPokemonList: any;
+  private _allPokemonList: any[];
 
   set allPokemonList(list) {
     this._allPokemonList = list;
@@ -65,8 +65,10 @@ export class PokeApiService {
   }
 
   async getAllPokemon() {
-    return await this.http
-      .get(`${environment.apiUrl}/pokemon?limit=898&offset=0`)
-      .toPromise();
+    if (!this._allPokemonList) {
+      return await this.http
+        .get(`${environment.apiUrl}/pokemon?limit=898&offset=0`)
+        .toPromise();
+    }
   }
 }
