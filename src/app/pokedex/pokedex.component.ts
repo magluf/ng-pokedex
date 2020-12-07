@@ -52,12 +52,10 @@ export class PokedexComponent implements OnInit {
       pokeList = this.pokeApiService.allPokemonList.filter((el) =>
         el.name.includes(value)
       );
-      console.log('🚀 ~ STRING', pokeList);
     } else {
       pokeList = this.pokeApiService.allPokemonList.filter((el) =>
         el.url.split('pokemon/')[1].slice(0, -1).includes(value)
       );
-      console.log('🚀 ~ NUMBER', pokeList);
     }
 
     this.searchResults = (

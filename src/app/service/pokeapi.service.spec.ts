@@ -35,7 +35,7 @@ describe('PokeapiService', () => {
     });
   });
 
-  it('#getPokemonInfo(25) should return the info for', (done: DoneFn) => {
+  it('#getPokemonInfo(25) should return the info for Pikachu', (done: DoneFn) => {
     spyOn(service, 'getPokemonInfo').and.returnValue(
       Promise.resolve(pikachuMock)
     );

@@ -54,9 +54,7 @@ describe('HomeComponent', () => {
 
   it('should call PokeApiService.getAllPokemon() when calling getAllPokemon', () => {
     const spy = spyOn(service, 'getAllPokemon');
-
     component.getAllPokemon();
-
     expect(spy).toHaveBeenCalled();
   });
 });
