@@ -32,7 +32,10 @@
   </div>
   <div class="search-screen-container">
     <div class="search-screen-border"></div>
-    <div *ngIf="beganSearch && !areAllImagesLoaded()" class="loading-spinner">
+    <div
+      *ngIf="beganSearch && !areAllImagesLoaded() && beganSearch"
+      class="loading-spinner"
+    >
       <div class="loading-bar">
         <div
           [style.width.px]="imagesLoadingProgress"
@@ -41,7 +44,7 @@
       </div>
     </div>
     <div
-      *ngIf="beganSearch && !areAllImagesLoaded()"
+      *ngIf="beganSearch && !areAllImagesLoaded() && beganSearch"
       class="loading-screen"
     ></div>
     <div class="search-screen">
@@ -60,5 +63,11 @@
       </div>
     </div>
   </div>
-  <div (click)="triggerClearPokemon()" class="button mt-2">Clear</div>
+  <div
+    *ngIf="searchResults && searchResults.length && areAllImagesLoaded()"
+    (click)="triggerClearPokemon()"
+    class="button mt-2"
+  >
+    Clear
+  </div>
 </div>

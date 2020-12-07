@@ -29,10 +29,12 @@ export class PokemonSearchComponent {
   }
 
   triggerFindPokemon() {
-    this.imagesLoaded = 0;
-    this.beganSearch = true;
-    this.errorMessageCleared = false;
-    this.findPokemon.emit(this.searchValue);
+    if (this.searchValue) {
+      this.imagesLoaded = 0;
+      this.beganSearch = true;
+      this.errorMessageCleared = false;
+      this.findPokemon.emit(this.searchValue);
+    }
   }
 
   triggerClearPokemon() {
