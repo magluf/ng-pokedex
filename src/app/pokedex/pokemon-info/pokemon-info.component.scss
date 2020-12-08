@@ -66,7 +66,7 @@ $poison: #A03FA1;
 $fire: #F17F2E;
 $ice: #98D9D9;
 $ground: #E1C066;
-$water: #71C44B;
+$water: #6890F0;
 $rock: #B89F38;
 $grass: #78C850;
 $dark: #6F5747;
@@ -117,6 +117,7 @@ $fairy: #EE99EE;
 }
 .water {
   background-color: $water;
+  color: white;
 }
 .rock {
   background-color: $rock;
